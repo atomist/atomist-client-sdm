@@ -31,7 +31,6 @@
     "@atomist/sdm": "^1.7.0",
     "@atomist/sdm-core": "^1.7.0",
     "@atomist/sdm-pack-gcp": "0.1.0-master.20191002152051",
-    "@atomist/sdm-pack-node": "^1.2.0-master.20190921230202",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
