@@ -14,19 +14,37 @@
  * limitations under the License.
  */
 
-import { goal } from "@atomist/sdm";
-import { GoalCreator } from "@atomist/sdm-core";
-import { HelloWorldGoals } from "./goals";
+import {
+    goal,
+    IndependentOfEnvironment,
+    Queue,
+} from "@atomist/sdm";
+import {
+    GoalCreator,
+} from "@atomist/sdm-core";
+import { AtomistClientSdmGoals } from "./goals";
 
 /**
  * Create all goal instances and return an instance of HelloWorldGoals
  */
-export const HelloWorldGoalCreator: GoalCreator<HelloWorldGoals> = async sdm => {
+export const AtomistClientSdmGoalCreator: GoalCreator<AtomistClientSdmGoals> = async sdm => {
 
-    // This is the place to create the goal instances and return them
-    // as part of the goal interface
+    const queue = new Queue({ concurrent: 5 });
+    const approvalGate = goal(
+        {
+            displayName: "approval",
+            environment: IndependentOfEnvironment,
+            preApproval: true,
+            descriptions: {
+                planned: "Approval pending",
+                waitingForPreApproval: "Approval pending",
+                completed: "Approved",
+            },
+        },
+        async gi => { /** Intentionally left empty */ });
 
     return {
-        helloWorld: goal({ displayName: "hello world" }),
+        queue,
+        approvalGate,
     };
 };
