@@ -4,7 +4,7 @@
 
 # @atomist/atomist-client-sdm
 
-[![atomist client sdm goals](http://badge.atomist.com/T29E48P34/atomist/atomist-client-sdm/c796f715-67c3-48ae-8b7c-45c0fd31443f)](https://app.atomist.com/workspace/T29E48P34)
+[![atomist sdm goals](https://badge.atomist.com/T29E48P34/atomist/atomist-client-sdm/90953f8f-ef11-4066-a043-cb599ee04f06)](https://app.atomist.com/workspace/T29E48P34)
 [![npm version](https://img.shields.io/npm/v/@atomist/atomist-client-sdm.svg)](https://www.npmjs.com/package/@atomist/atomist-client-sdm)
 [![docker pulls](https://img.shields.io/docker/pulls/atomist/atomist-client-sdm.svg)](https://hub.docker.com/r/atomist/atomist-client-sdm)
 [![release](https://img.shields.io/github/release/atomist/atomist-client-sdm.svg)](https://github.com/atomist/atomist-client-sdm/releases/latest)
