@@ -16,14 +16,15 @@
 
 import { AnyPush } from "@atomist/sdm";
 import { configure } from "@atomist/sdm-core";
-import { HelloWorldGoalConfigurer } from "./lib/goals/goalConfigurer";
-import { HelloWorldGoalCreator } from "./lib/goals/goalCreator";
-import { HelloWorldGoals } from "./lib/goals/goals";
+import { machineOptions } from "./lib/configure";
+import { AtomistClientSdmGoalConfigurer } from "./lib/goals/goalConfigurer";
+import { AtomistClientSdmGoalCreator } from "./lib/goals/goalCreator";
+import { AtomistClientSdmGoals } from "./lib/goals/goals";
 
 /**
  * The main entry point into the SDM
  */
-export const configuration = configure<HelloWorldGoals>(async sdm => {
+export const configuration = configure<AtomistClientSdmGoals>(async sdm => {
 
     // Use the sdm instance to configure commands etc
     sdm.addCommand({
@@ -35,7 +36,7 @@ export const configuration = configure<HelloWorldGoals>(async sdm => {
     });
 
     // Create goals and configure them
-    const goals = await sdm.createGoals(HelloWorldGoalCreator, [HelloWorldGoalConfigurer]);
+    const goals = await sdm.createGoals(AtomistClientSdmGoalCreator, [AtomistClientSdmGoalConfigurer]);
 
     // Return all push rules
     return {
@@ -44,4 +45,4 @@ export const configuration = configure<HelloWorldGoals>(async sdm => {
             goals: goals.helloWorld,
         },
     };
-});
+}, machineOptions);

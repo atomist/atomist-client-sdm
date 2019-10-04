@@ -14,15 +14,20 @@
  * limitations under the License.
  */
 
-import { GoalWithFulfillment } from "@atomist/sdm";
-import { DeliveryGoals } from "@atomist/sdm-core";
+import {
+    GoalWithFulfillment,
+    Queue,
+} from "@atomist/sdm";
+import {
+    DeliveryGoals,
+} from "@atomist/sdm-core";
 
 /**
- * Interface to capture all goals that this SDM will manage
+ * Interface to capture all goals that this SDM will manage.
  */
-export interface HelloWorldGoals extends DeliveryGoals {
-
-    /** Simple hello world goal */
-    helloWorld: GoalWithFulfillment;
-
+export interface AtomistClientSdmGoals extends DeliveryGoals {
+    /** Manage concurrent tasks using Queue goal. */
+    queue: Queue;
+    /** Approval gate goal, insert after goals that need manual approval. */
+    approvalGate: GoalWithFulfillment;
 }

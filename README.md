@@ -2,13 +2,15 @@
   <img src="https://images.atomist.com/sdm/SDM-Logo-Dark.png">
 </p>
 
-# @atomist-seeds/empty-sdm
+# @atomist/atomist-client-sdm
 
-[![atomist sdm goals](http://badge.atomist.com/T29E48P34/atomist-seeds/empty-sdm/c796f715-67c3-48ae-8b7c-45c0fd31443f)](https://app.atomist.com/workspace/T29E48P34)
-[![npm version](https://img.shields.io/npm/v/@atomist-seeds/empty-sdm.svg)](https://www.npmjs.com/package/@atomist-seeds/empty-sdm)
+[![atomist client sdm goals](http://badge.atomist.com/T29E48P34/atomist/atomist-client-sdm/c796f715-67c3-48ae-8b7c-45c0fd31443f)](https://app.atomist.com/workspace/T29E48P34)
+[![npm version](https://img.shields.io/npm/v/@atomist/atomist-client-sdm.svg)](https://www.npmjs.com/package/@atomist/atomist-client-sdm)
+[![docker pulls](https://img.shields.io/docker/pulls/atomist/atomist-client-sdm.svg)](https://hub.docker.com/r/atomist/atomist-client-sdm)
+[![release](https://img.shields.io/github/release/atomist/atomist-client-sdm.svg)](https://github.com/atomist/atomist-client-sdm/releases/latest)
 
-The simplest possible [Atomist][atomist] software delivery machine
-(SDM).
+The Atomist Software Delivery Machine (SDM) that delivers
+[Atomist][atomist] open-source projects.
 
 Software delivery machines enable you to control your delivery process
 in code.  Think of it as an API for your software delivery.  See the
@@ -60,7 +62,7 @@ channel in the [Atomist community Slack workspace][slack].
 
 If you find a problem, please create an [issue][].
 
-[issue]: https://github.com/atomist-seeds/empty-sdm/issues
+[issue]: https://github.com/atomist/atomist-client-sdm/issues
 
 ## Development
 
@@ -86,10 +88,10 @@ $ npm run build
 
 ### Release
 
-Releases are handled via the [Atomist SDM][atomist-sdm].  Just press
+Releases are handled via the [Atomist Client SDM][atomist-client-sdm].  Just press
 the 'Approve' button in the Atomist dashboard or Slack.
 
-[atomist-sdm]: https://github.com/atomist/atomist-sdm (Atomist Software Delivery Machine)
+[atomist-client-sdm]: https://github.com/atomist/atomist-client-sdm (Atomist Client Software Delivery Machine)
 
 ---
 
