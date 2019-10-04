@@ -15,12 +15,20 @@
  */
 
 import {
+    AutoCodeInspection,
+    Autofix,
     GoalWithFulfillment,
+    PushImpact,
     Queue,
 } from "@atomist/sdm";
 import {
     DeliveryGoals,
+    Tag,
+    Version,
 } from "@atomist/sdm-core";
+import { Changelog } from "@atomist/sdm-pack-changelog";
+import { DockerBuild } from "@atomist/sdm-pack-docker";
+import { KubernetesDeploy } from "@atomist/sdm-pack-k8s";
 
 /**
  * Interface to capture all goals that this SDM will manage.
@@ -30,4 +38,45 @@ export interface AtomistClientSdmGoals extends DeliveryGoals {
     queue: Queue;
     /** Approval gate goal, insert after goals that need manual approval. */
     approvalGate: GoalWithFulfillment;
+
+    /** Code inspections. */
+    autoCodeInspection: AutoCodeInspection;
+    /** Push impacts, including aspect fingerprints. */
+    pushImpact: PushImpact;
+    /** Create timestamped prerelease version for goal set. */
+    version: Version;
+    /** Code autofixes. */
+    autofix: Autofix;
+    /** Build the project. */
+    build: GoalWithFulfillment;
+    /** Create and push prerelease version Git tag(s). */
+    tag: Tag;
+    /** Build and push Docker image. */
+    dockerBuild: DockerBuild;
+    /** Publish prerelease version of build artifact. */
+    publish: GoalWithFulfillment;
+
+    /** Deploy Docker image to staging environment. */
+    stagingDeploy: KubernetesDeploy;
+    /** Deploy Docker image to production environment. */
+    productionDeploy: KubernetesDeploy;
+    /** Deploy Docker image to demo environment. */
+    demoProductionDeploy: KubernetesDeploy;
+    /** Deploy Docker image to integration environment. */
+    integrationProductionDeploy: KubernetesDeploy;
+
+    /** Publish release version of build artifact. */
+    release: GoalWithFulfillment;
+    /** Tag prerelease version of Docker image with release version. */
+    releaseDocker: GoalWithFulfillment;
+    /** Create and push release version Git tag. */
+    releaseTag: GoalWithFulfillment;
+    /** Update changelog after release. */
+    releaseChangelog: Changelog;
+    /** Publish documentation as part of release. */
+    releaseDocs: GoalWithFulfillment;
+    /** Create Homebrew core formula pull request. */
+    releaseHomebrew: GoalWithFulfillment;
+    /** Increment version after release. */
+    releaseVersion: GoalWithFulfillment;
 }
